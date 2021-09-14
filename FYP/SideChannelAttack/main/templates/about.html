@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="with=device-width, initial-scale=1.0">
+		<title> Network side-channel attack detector tool </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static '/css/style.css' %}">
+	</head>
+	
+	<body>
+		<section class="header">
+			<header>
+				<nav>
+					<a href="/index"><img src="{% static 'images/logo.png' %}"></a>
+					<div class="nav-links">
+						<ul>
+							<li><a href="/home">Home</a></li>
+							<li><a href="/tools">Detector Tools</a></li>
+							<li><a href="/guide">Guide</a></li>
+							<li><a href="/about">About Us</a></li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			
+			<div class="description">
+				<p>We are a small team working together to create a tool that can help prevent a networking threat called side-channel-attack. 
+				In this modern day and age where private and confidential data are being stolen, it is important to implement security to protect them. Our team have been tasked with such a
+				duty. Our members are as follow:</p>
+			</div>
+			
+			<div class="wrap">
+				<h1>Our Team</h1>
+				
+				<div class="team">
+				
+					<div class="team_member">
+						<div class="team_img">
+							<img src="{% static 'images/teoh.PNG' %}" alt="team_member_image">
+						</div>
+						<h3>Teoh Chen Shen</h3>
+						<p>The leader of our team. Currently taking Data Science major under Bachelor of Computer Science. 
+						A hardworking individual and helps to keep the team in check to prevent conflict.</p>
+						<p class="contact">Contact: 101210208@students.swinburne.edu.my</p>
+					</div>
+					<div class="team_member">
+						<div class="team_img">
+							<img src="{% static 'images/leon.PNG' %}" alt="team_member_image">
+						</div>
+						<h3>Lai Jing Te</h3>
+						<p>Currently taking major in Software Development under Bachelor of Computer Science. 
+						Lai handles most of the programming and backend process of the tool.</p>
+						<p class="contact">Contact: 101218082@students.swinburne.edu.my</p>
+					</div>
+					<div class="team_member">
+						<div class="team_img">
+							<img src="{% static 'images/chai.PNG' %}" alt="team_member_image">
+						</div>
+						<h3>Chai Wen Shen</h3>
+						<p>Currently taking major in Cybersecurity under Bachelor of Computer Science. 
+						Chai handles the networking part of the detection tool and tells Lai on how the detection tools work.</p>
+						<p class="contact">Contact: 101215274@students.swinburne.edu.my</p>
+					</div>
+					<div class="team_member">
+						<div class="team_img">
+							<img src="{% static 'images/ian.jpg' %}" alt="team_member_image">
+						</div>
+						<h3>Ian Marcellus Ong</h3>
+						<p>Currently taking major in Cybersecurity under Bachelor of Computer Science. 
+						Ian works together with Chai in order to help make the detection tool function properly as it is.</p>
+						<p class="contact">Contact: 101215957@students.swinburne.edu.my</p>
+					</div>
+					
+				</div>
+			</div>
+		
+		</section>
+	
+	</body>
+</html>

@@ -1,0 +1,404 @@
+*{
+	margin : 0;
+	padding : 0;
+}
+
+.header{
+	min-height: 100vh;
+	width: 100%;
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(../images/cybersecurity.png);
+	background-position: center;
+	background-size:cover;
+	position:relative;
+}
+
+nav{
+	display:flex;
+	padding: 0% 5%;
+	justify-content: space-between;
+	align-items: center;
+	background: #add8e6;
+	opacity:70%;
+}
+
+nav img{
+	width: 130px;
+}
+
+.nav-links{
+	flex: 1;
+	text-align: right;
+}
+
+.nav-links ul li{
+	list-style: none;
+	display:inline-block;
+	padding: 8px 12px;
+	position: relative;
+}
+
+.nav-links ul li a{
+	color: black;
+	text-decoration: none;
+	font-size: 21px;
+	text-transform:uppercase;
+}
+
+.nav-links ul li::after{
+	content:'';
+	width:0%;
+	height:2px;
+	background: #f44336;
+	display:block;
+	margin:auto;
+	transition:0.5s;
+}
+
+.nav-links ul li:hover::after{
+	width:100%;
+}
+
+.text-box{
+	width: 100%;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	transform: translate (-50%, -50%);
+	text-align:center;
+}
+
+.text-box h1{
+	font-size: 62px;
+}
+
+.text-box p{
+	margin: 10px 0 40px;
+	font-size: 14px;
+	color: #fff;
+}
+
+.hero-btn{
+	display:inline-block;
+	text-decoration:none;
+	color:white;
+	border: 1px solid white;
+	padding: 12px 34px;
+	font-size: 13px;
+	background: transparent;
+	position:relative;
+	cursor: pointer;
+}
+
+.hero-btn:hover{
+	border: 1px solid red;
+	background-color: red;
+	transition: 1s;
+}
+
+@media(max-width: 700px){
+	.text-box h1{
+		font-size: 20px;
+	}
+	
+	.nav-links ul li{
+		display: block;
+	}
+	
+	.nav-links ul li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+	}
+}
+
+.wrapper{
+	width:60%;
+	background: #fff;
+	padding: 30px;
+	border-radius: 16px;
+	box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+	top:50%;
+	height: auto;
+	position: absolute;
+	left:50%;
+	-ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+	text-align:center;
+	opacity:90%;
+}
+
+.wrapper-box{
+	width:50%;
+	padding: 30px;
+	border-radius: 16px;
+	box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+	top:50%;
+	left:50%;
+	position:absolute;
+	-ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.test-button{
+	position:absolute;
+    bottom: 5%;
+    right:45%;
+}
+
+.upload-box{
+	font-size:16px;
+	background: white;
+	border-radius: 50px;
+	box-shadow: 5px 5px 10px black;
+	width: 350px;
+	outline: none;
+}
+
+::-webkit-file-upload-button{
+	color:white;
+	background: #206a5d;
+	padding:20px;
+	border:none;
+	border-radius: 50px;
+	box-shadow: 1px 0 1px 1px #6b4559;
+	outline:none;
+}
+
+::-webkit-file-upload-button:hover{
+	background: #0ABAB5;
+}
+
+.file-submit-button {
+	 width:50%;
+     background:#B9DFFF;
+     color:#fff;
+     border:1pxsolid#eee;
+     border-radius:20px;
+     box-shadow:5px5px5px#eee;
+     text-shadow:none;
+}
+.file-submit-button:hover {
+     background:#016ABC;
+     color:#fff;
+     border:1pxsolid#eee;
+     border-radius:20px;
+     box-shadow:5px5px5px#eee;
+     text-shadow:none;
+}
+
+.button, .button-test {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  display:inline;
+  }
+
+.button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.button-test:hover {
+  background-color: red;
+  box-shadow: 0px 15px 20px rgba(255, 0, 0, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.one-line{
+		width:100%;
+		text-align:center;
+	}
+	
+.in-line{
+		display:inline-block;
+	}
+
+.button1{
+	display:inline-block;
+	padding:0.2em 1.45em;
+	margin:0.1em;
+	border:0.15em solid #CCCCCC;
+	box-sizing: border-box;
+	text-decoration:none;
+	font-family:'Segoe UI','Roboto',sans-serif;
+	font-weight:400;
+	color:#000000;
+	background-color:#CCCCCC;
+	text-align:center;
+	position:relative;
+}
+.button1:hover{
+	border-color:#7a7a7a;
+}
+.button1:active{
+	background-color:#999999;
+}
+@media all and (max-width:30em){
+	.button1{
+		display:block;
+		margin:0.2em auto;
+	}
+}
+
+.plus-button {
+	border: 2px solid lightgrey;
+	background-color: #fff;
+	font-size: 16px;
+	height: 2.5em;
+	width: 2.5em;
+	border-radius: 999px;
+	position: relative;
+	
+	&:after,
+	&:before {
+		content: "";
+		display: block;
+		background-color: grey;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	&:before {
+		height: 1em;
+		width: 0.2em;
+	}
+
+	&:after {
+		height: 0.2em;
+		width: 1em;
+	}
+}
+
+.plus-button--small {
+	font-size: 12px;
+}
+
+.plus-button--large {
+	font-size: 22px;
+}
+
+.plus-button:hover{
+	background-color: grey;
+	transition:0.5s;
+}
+
+.ip-word{
+	font-family: FreeMono, monospace;	
+}
+
+.wrap{
+	margin-top: 10%;
+}
+
+.wrap h1 {
+	font-family: 'Allura', cursive;
+	font-size: 52px;
+	margin-bottom: 60px;
+	text-align: center;
+}
+
+.team {
+	display: flex;
+	text-align: center;
+	width: auto;
+	justify-content: center;
+}
+
+.team .team_member {
+	background: #add8e6;
+	margin: 5px;
+	margin-bottom: 50px;
+	width: 300px;
+	padding: 20px;
+	line-height: 20px;
+	font-family: 'Georgia', serif;
+	position: relative;
+}
+
+.team .team_member h3 {
+	font-size: 26px;
+	margin-top: 50px;
+}
+
+.team .team_member p.contact {
+	color: #0000ff;
+	font-size: 13px;
+	margin: 12px 0;
+}
+
+.team .team_member .team_img {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.team .team_member .team_img img{
+	width: 100px;
+	height: 100px;
+}
+
+.description {
+	font-size: 20px;
+	text-align: center;
+	font-family: 'Georgia', serif;
+	color: #fff;
+	margin-top: 30px;
+}
+
+h1{
+    font-size: 50px;
+    text-align: center;
+    font-family: cursive;
+    color: white;
+    margin-top: 30px;
+}
+
+.guide p{
+    font-size: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.guide li{
+    text-align: left;
+    color: #fff;
+    margin-top: 20px;
+    font-size: 20px;
+	padding-left:10px;
+}
+
+.guide img{
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.center{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="with=device-width, initial-scale=1.0">
+		<title> Network side-channel attack detector tool </title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static '/css/style.css' %}">
+	</head>
+	
+	<body>
+		<section class="header">
+			<header>
+				<nav>
+				{% load static %}
+					<a href="/index"><img src="{% static 'images/logo.png' %}"></a>
+					<div class="nav-links">
+						<ul>
+							<li><a href="/home">Home</a></li>
+							<li><a href="/tools">Detector Tools</a></li>
+							<li><a href="/guide">Guide</a></li>
+							<li><a href="/about">About Us</a></li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			
+			<h1>Guidelines on dectector tool</h1>
+            
+            <div class="guide">
+                    <li>Firstly, you need to upload your own pcap file.</li>
+                    <li>In order to obtain your own pcap file, you have to use tools such as WireShark. From there, you need to use a random search term for example, "Hello", and do it for 10 times.</li>
+                    <li>Moving forward, you would need 10 of the pcap files and upload it to the upload section for testing.</li>
+                    <li>Let the tool run for some time and you will be able to obtain the result on whether or not it is vulnerable to side-channel attacks.</li><br>
+					
+                
+                <img src="{% static 'images/image1.png' %}" alt="picture" class="center" style="width:700px;height:500px;">
+                     
+                <p>
+                    To check for your IP address, use the link provided.<a href="https://whatismyipaddress.com/" style="color: white"> Link to check your IP address.</a>
+                </p>
+                     
+                <img src="{% static 'images/image2.png' %}" alt="picture" class="center" style="width:700px;height:500px;">
+            
+            </div>
+			
+		</section>
+		
+		
+	
+	
+	</body>
+</html>
