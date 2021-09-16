@@ -67,5 +67,16 @@ def upload(request):
         subprocess.run('bash main/tools/populate_objectsdb.sh', shell=True)
         subprocess.run('bash main/tools/train_classifiers.sh', shell=True)
         subprocess.run('python main/tools/determine_classifier_accuracy.py')
+        
+        #Read the result text file and append it into mylist
+        with open('result.txt', 'r') as out:
+            line = out.readlines()
+            mylist = []
+            for i in line:
+                mylist.append(i)
+            
+                
+
+
     # return render(request, 'result.html',{})   
-    return render(request, 'tools.html',{})
+    return render(request, 'tools.html',{'data1':mylist[0],'data2':mylist[1],'data3':mylist[2]})
