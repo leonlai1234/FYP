@@ -42,6 +42,14 @@
 				</div>
 				<br><br>
 			</form>
+
+			{%if data1 %}
+				<p style="font-weight:bold;font-size:125%;">Result</p><br>
+				<p>Average True Positive Rate : {{data1 |linebreaksbr }}</p>
+				<p>Average False Positive Rate : {{data2 |linebreaksbr }}</p>
+				<p>Average Non-detection Rate : {{data3 |linebreaksbr }}</p>
+			{%endif%}
+
 		</div>
 	</div>
 </body>

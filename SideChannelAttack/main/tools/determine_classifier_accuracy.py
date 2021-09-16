@@ -173,3 +173,8 @@ avg_ndr = (avg_ndr / len(hybrid_classifier_stats)) * 100
 print("Average True Positive rate = {}%".format(avg_tpr))
 print("Average False Positive rate = {}%".format(avg_fpr))
 print("Average Non-detection rate = {}%".format(avg_ndr))
+
+with open("result.txt", "w") as f:
+    f.write(str(avg_tpr) + "\n")
+    f.write(str(avg_fpr) + "\n")
+    f.write(str(avg_ndr))
