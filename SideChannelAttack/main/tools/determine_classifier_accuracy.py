@@ -135,9 +135,9 @@ for classifier in classifier_stats:
 avg_tpr = (avg_tpr / len(classifier_stats)) * 100
 avg_fpr = (avg_fpr / len(classifier_stats)) * 100
 avg_ndr = (avg_ndr / len(classifier_stats)) * 100
-bayesian_avgtpr = avg_tpr
-bayesian_avgfpr = avg_fpr
-bayesian_avgndr = avg_ndr
+bayesian_avgtpr = round(avg_tpr,2)
+bayesian_avgfpr = round(avg_fpr,2)
+bayesian_avgndr = round(avg_ndr,2)
 print("Average True Positive rate = {}%".format(avg_tpr))
 print("Average False Positive rate = {}%".format(avg_fpr))
 print("Average Non-detection rate = {}%".format(avg_ndr))
@@ -156,9 +156,9 @@ for classifier in nn_classifier_stats:
 avg_tpr = (avg_tpr / len(nn_classifier_stats)) * 100
 avg_fpr = (avg_fpr / len(nn_classifier_stats)) * 100
 avg_ndr = (avg_ndr / len(nn_classifier_stats)) * 100
-nearest_avgtpr = avg_tpr
-nearest_avgfpr = avg_fpr
-nearest_avgndr = avg_ndr
+nearest_avgtpr = round(avg_tpr,2)
+nearest_avgfpr = round(avg_fpr,2)
+nearest_avgndr = round(avg_ndr,2)
 print("Average True Positive rate = {}%".format(avg_tpr))
 print("Average False Positive rate = {}%".format(avg_fpr))
 print("Average Non-detection rate = {}%".format(avg_ndr))
@@ -176,12 +176,16 @@ for classifier in hybrid_classifier_stats:
 avg_tpr = (avg_tpr / len(hybrid_classifier_stats)) * 100
 avg_fpr = (avg_fpr / len(hybrid_classifier_stats)) * 100
 avg_ndr = (avg_ndr / len(hybrid_classifier_stats)) * 100
-hybrid_avgtpr = avg_tpr
-hybrid_avgfpr = avg_fpr
-hybrid_avgndr = avg_ndr
+hybrid_avgtpr = round(avg_tpr,2)
+hybrid_avgfpr = round(avg_fpr,2)
+hybrid_avgndr = round(avg_ndr,2)
 print("Average True Positive rate = {}%".format(avg_tpr))
 print("Average False Positive rate = {}%".format(avg_fpr))
 print("Average Non-detection rate = {}%".format(avg_ndr))
+
+avg_tpr = round(avg_tpr,2)
+avg_fpr = round(avg_fpr,2)
+avg_ndr = round(avg_ndr,2)
 
 with open("result.txt", "w") as f:
     f.write(str(avg_tpr) + "\n")
