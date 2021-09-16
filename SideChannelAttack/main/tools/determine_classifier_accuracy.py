@@ -135,6 +135,9 @@ for classifier in classifier_stats:
 avg_tpr = (avg_tpr / len(classifier_stats)) * 100
 avg_fpr = (avg_fpr / len(classifier_stats)) * 100
 avg_ndr = (avg_ndr / len(classifier_stats)) * 100
+bayesian_avgtpr = avg_tpr
+bayesian_avgfpr = avg_fpr
+bayesian_avgndr = avg_ndr
 print("Average True Positive rate = {}%".format(avg_tpr))
 print("Average False Positive rate = {}%".format(avg_fpr))
 print("Average Non-detection rate = {}%".format(avg_ndr))
@@ -153,6 +156,9 @@ for classifier in nn_classifier_stats:
 avg_tpr = (avg_tpr / len(nn_classifier_stats)) * 100
 avg_fpr = (avg_fpr / len(nn_classifier_stats)) * 100
 avg_ndr = (avg_ndr / len(nn_classifier_stats)) * 100
+nearest_avgtpr = avg_tpr
+nearest_avgfpr = avg_fpr
+nearest_avgndr = avg_ndr
 print("Average True Positive rate = {}%".format(avg_tpr))
 print("Average False Positive rate = {}%".format(avg_fpr))
 print("Average Non-detection rate = {}%".format(avg_ndr))
@@ -170,6 +176,9 @@ for classifier in hybrid_classifier_stats:
 avg_tpr = (avg_tpr / len(hybrid_classifier_stats)) * 100
 avg_fpr = (avg_fpr / len(hybrid_classifier_stats)) * 100
 avg_ndr = (avg_ndr / len(hybrid_classifier_stats)) * 100
+hybrid_avgtpr = avg_tpr
+hybrid_avgfpr = avg_fpr
+hybrid_avgndr = avg_ndr
 print("Average True Positive rate = {}%".format(avg_tpr))
 print("Average False Positive rate = {}%".format(avg_fpr))
 print("Average Non-detection rate = {}%".format(avg_ndr))
@@ -178,3 +187,18 @@ with open("result.txt", "w") as f:
     f.write(str(avg_tpr) + "\n")
     f.write(str(avg_fpr) + "\n")
     f.write(str(avg_ndr))
+    
+with open("main/static/result-view.txt", "w") as fs:
+    fs.write("Bayesian Classifier Performance\n")
+    fs.write("Average True Positive rate : " + str(bayesian_avgtpr) + "\n")
+    fs.write("Average False Positive rate : " + str(bayesian_avgfpr) + "\n")
+    fs.write("Average Non-detection rate : " + str(bayesian_avgndr) + "\n\n")
+    fs.write("Nearest Neighbour Classifier Performance\n")
+    fs.write("Average True Positive rate : " + str(nearest_avgtpr) + "\n")
+    fs.write("Average False Positive rate : " + str(nearest_avgfpr) + "\n")
+    fs.write("Average Non-detection rate : " + str(nearest_avgndr) + "\n\n")
+    fs.write("Hybrid Classifier Performance\n")
+    fs.write("Average True Positive rate : " + str(hybrid_avgtpr) + "\n")
+    fs.write("Average False Positive rate : " + str(hybrid_avgfpr) + "\n")
+    fs.write("Average Non-detection rate : " + str(hybrid_avgndr) + "\n")
+
