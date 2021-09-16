@@ -190,7 +190,7 @@ avg_ndr = round(avg_ndr,2)
 with open("result.txt", "w") as f:
     f.write(str(avg_tpr) + "\n")
     f.write(str(avg_fpr) + "\n")
-    f.write(str(avg_ndr))
+    f.write(str(avg_ndr) + "\n")
     
 with open("main/static/result-view.txt", "w") as fs:
     fs.write("Bayesian Classifier Performance\n")
