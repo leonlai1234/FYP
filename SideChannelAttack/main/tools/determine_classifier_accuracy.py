@@ -218,3 +218,4 @@ with open("main/static/result-view.txt", "w") as fs:
     fs.write("Average False Positive rate : " + str(hybrid_avgfpr) + "%\n")
     fs.write("Average Non-detection rate : " + str(hybrid_avgndr) + "%\n")
     fs.write("----------------------------------------------------------\n")
+    

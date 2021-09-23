@@ -83,4 +83,4 @@ def upload(request):
 
 
     # return render(request, 'result.html',{})   
-    return render(request, 'tools.html',{'data1':mylist[0],'data2':mylist[1],'data3':mylist[2]})
+    return render(request, 'tools.html',{'data1':mylist[0],'data2':total_files})
