@@ -203,7 +203,7 @@ with open("main/static/result-view.txt", "w") as fs:
     fs.write("Date and Time : " + str(x) + "\n")
     fs.write("Number of Files Processed : " + total_file + "\n")
     fs.write("----------------------------------------------------------\n")
-    fs.write("Result of Files Detection Rate\n\n")
+    fs.write("Result of Files Detection Rate\n")
     fs.write("----------------------------------------------------------\n")
     fs.write("Bayesian Classifier Performance\n")
     fs.write("Average True Positive rate : " + str(bayesian_avgtpr) + "%\n")
