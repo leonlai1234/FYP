@@ -4,6 +4,7 @@
 from genericpath import isfile
 import os
 import glob
+import datetime
 
 from determine_type_module import getBayesianType, getNearestNeighbourType, getHybridClassifierType
 
@@ -187,12 +188,23 @@ avg_tpr = round(avg_tpr,2)
 avg_fpr = round(avg_fpr,2)
 avg_ndr = round(avg_ndr,2)
 
+total_file = os.environ['Total_Files']
+x = datetime.datetime.now()
+x = x.strftime("%d/%m/%Y %H:%M:%S")
+
 with open("result.txt", "w") as f:
     f.write(str(avg_tpr) + "\n")
     f.write(str(avg_fpr) + "\n")
     f.write(str(avg_ndr) + "\n")
     
 with open("main/static/result-view.txt", "w") as fs:
+    fs.write("Side Channel Attack Detection Tools\n")
+    fs.write("----------------------------------------------------------\n")
+    fs.write("Date and Time : " + str(x) + "\n")
+    fs.write("Number of Files Processed : " + total_file + "\n")
+    fs.write("----------------------------------------------------------\n")
+    fs.write("Result of Files Detection Rate\n\n")
+    fs.write("----------------------------------------------------------\n")
     fs.write("Bayesian Classifier Performance\n")
     fs.write("Average True Positive rate : " + str(bayesian_avgtpr) + "%\n")
     fs.write("Average False Positive rate : " + str(bayesian_avgfpr) + "%\n")
@@ -205,4 +217,4 @@ with open("main/static/result-view.txt", "w") as fs:
     fs.write("Average True Positive rate : " + str(hybrid_avgtpr) + "%\n")
     fs.write("Average False Positive rate : " + str(hybrid_avgfpr) + "%\n")
     fs.write("Average Non-detection rate : " + str(hybrid_avgndr) + "%\n")
-
+    fs.write("----------------------------------------------------------\n")

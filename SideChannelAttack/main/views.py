@@ -39,6 +39,7 @@ def upload(request):
         #Initialize counter
         i = 0
         x = 0
+        total_files = 0
 
         #Loop through the form FILES list and save the files
         while x < 10:
@@ -48,11 +49,13 @@ def upload(request):
                     trainfilename_list.append('train_pcap_uploadfile' + str(x) + '.' + str(i))
                     fss = FileSystemStorage('TrainData','TrainData')
                     fss.save('train_pcap_uploadfile' + str(x) + '.' + str(i), f)
+                    total_files += 1
                 else:
                     #Spliting the files into Test folder and save the name of the file into a list
                     testfilename_list.append('test_pcap_uploadfile' + str(x) + '.' + str(i))
                     fss = FileSystemStorage('TestData','TestData')
                     fss.save('test_pcap_uploadfile' + str(x) + '.' + str(i), f)
+                    total_files += 1
                 i = i + 1
             if (bool(request.FILES.getlist('uploadfile' + str(x))) == False):
                 break
@@ -60,6 +63,7 @@ def upload(request):
             x += 1
 
         #Putting list into user's environment
+        os.environ['Total_Files'] = str(total_files)
         os.putenv('totalupload',str(x))
         os.putenv('trainfilename_list',' '.join(trainfilename_list))
         os.putenv('testfilename_list',' '.join(testfilename_list))
