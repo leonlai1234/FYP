@@ -3,7 +3,7 @@ from django.http import HttpResponse
 import subprocess
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.storage import FileSystemStorage
-import os
+import glob, os, os.path
 
 #172.19.0.2
 
@@ -72,9 +72,13 @@ def upload(request):
             mylist = []
             for i in line:
                 mylist.append(i)
-            
-                
+        
+        filelist = glob.glob(os.path.join("TrainData/", "train_pcap_*"))
+        for f in filelist:
+            os.remove(f)
 
-
+        filelist = glob.glob(os.path.join("TestData/", "test_pcap_*"))
+        for f in filelist:
+            os.remove(f)
     # return render(request, 'result.html',{})   
     return render(request, 'tools.html',{'data1':mylist[0],'data2':total_files})
