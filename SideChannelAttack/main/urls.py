@@ -12,6 +12,5 @@ urlpatterns = [
     path('about/',views.about, name="about"),
     path('guide/',views.guide, name="guide"),
     path('tools/',views.tools, name="tools"),
-    path('reset/', views.reset, name='run_sh'),
     path('tools/upload',views.upload,name='upload')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

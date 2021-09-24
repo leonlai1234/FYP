@@ -26,12 +26,6 @@ def tools(request):
     return render(request, "tools.html")
 
 @csrf_exempt
-def reset(request):
-    if request.method == 'POST':
-
-        return render(request, "home.html", {})
-
-@csrf_exempt
 def upload(request):
     if request.method == 'POST':
         #Get form ip address value
