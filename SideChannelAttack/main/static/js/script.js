@@ -11,3 +11,16 @@ function duplicate() {
         document.getElementById("uploadfile0").parentNode.appendChild(clone);
     }
 }
+
+function checkFiles(files,id){
+    if(files.length>10){
+        alert("Only 10 pcap files per entries.");
+
+        let list = new DataTransfer;
+        for(let i=0; i<10; i++)
+        {
+            list.items.add(files[i]) 
+        }
+        document.getElementById(id).files = list.files
+    }
+}
