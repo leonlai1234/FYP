@@ -14,7 +14,7 @@ function duplicate() {
 
 function checkFiles(files,id){
     if(files.length>10){
-        alert("Only 10 pcap files per entries.");
+        alert("10 pcap files per entries.");
 
         let list = new DataTransfer;
         for(let i=0; i<10; i++)
@@ -22,5 +22,7 @@ function checkFiles(files,id){
             list.items.add(files[i]) 
         }
         document.getElementById(id).files = list.files
+    }else if(files.length < 10){
+        alert("10 pcap files per entries.");
     }
 }

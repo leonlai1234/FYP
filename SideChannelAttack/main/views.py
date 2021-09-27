@@ -80,5 +80,9 @@ def upload(request):
         filelist = glob.glob(os.path.join("TestData/", "test_pcap_*"))
         for f in filelist:
             os.remove(f)
+
+        filelist = glob.glob(os.path.join("", "*.json"))
+        for f in filelist:
+            os.remove(f)
     # return render(request, 'result.html',{})   
     return render(request, 'tools.html',{'data1':mylist[0],'data2':total_files})
