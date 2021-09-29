@@ -4,6 +4,7 @@ import subprocess
 from django.views.decorators.csrf import csrf_exempt
 from django.core.files.storage import FileSystemStorage
 import glob, os, os.path
+import datetime
 
 #172.19.0.2
 
@@ -55,6 +56,38 @@ def upload(request):
                 break
             i = 0
             x += 1
+            
+        dt = datetime.datetime.now()
+        dt = dt.strftime("%d/%m/%Y %H:%M:%S")
+        
+        #In case Wrong IP input, it will show 0% as result
+        with open("result.txt", "w") as f:
+            f.write("0\n")
+            f.write("0\n")
+            f.write("0")
+    
+        with open("main/static/result-view.txt", "w") as fs:
+            fs.write("Side Channel Attack Detection Tools\n")
+            fs.write("----------------------------------------------------------\n")
+            fs.write("Date and Time : " + str(dt) + "\n")
+            fs.write("Number of Files Processed : " + str(total_files) + "\n")
+            fs.write("IP address : " + str(ip) + "\n")
+            fs.write("----------------------------------------------------------\n")
+            fs.write("Result of Files Detection Rate\n")
+            fs.write("----------------------------------------------------------\n")
+            fs.write("Bayesian Classifier Performance\n")
+            fs.write("Average True Positive rate : " + "0%\n")
+            fs.write("Average False Positive rate : " + "0%\n")
+            fs.write("Average Non-detection rate : " + "0%\n\n")
+            fs.write("Nearest Neighbour Classifier Performance\n")
+            fs.write("Average True Positive rate : " + "0%\n")
+            fs.write("Average False Positive rate : " + "0%\n")
+            fs.write("Average Non-detection rate : " + "0%\n\n")
+            fs.write("Hybrid Classifier Performance\n")
+            fs.write("Average True Positive rate : " + "0%\n")
+            fs.write("Average False Positive rate : " + "0%\n")
+            fs.write("Average Non-detection rate : " + "0%\n")
+            fs.write("----------------------------------------------------------\n")
 
         #Putting list into user's environment
         os.environ['Total_Files'] = str(total_files)

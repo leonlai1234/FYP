@@ -189,6 +189,7 @@ avg_fpr = round(avg_fpr,2)
 avg_ndr = round(avg_ndr,2)
 
 total_file = os.environ['Total_Files']
+ipadd = os.environ['ipadd']
 x = datetime.datetime.now()
 x = x.strftime("%d/%m/%Y %H:%M:%S")
 
@@ -202,6 +203,7 @@ with open("main/static/result-view.txt", "w") as fs:
     fs.write("----------------------------------------------------------\n")
     fs.write("Date and Time : " + str(x) + "\n")
     fs.write("Number of Files Processed : " + total_file + "\n")
+    fs.write("IP address : " + str(ipadd) + "\n")
     fs.write("----------------------------------------------------------\n")
     fs.write("Result of Files Detection Rate\n")
     fs.write("----------------------------------------------------------\n")
