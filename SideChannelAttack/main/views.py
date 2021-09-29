@@ -101,10 +101,9 @@ def upload(request):
         
         result=""
 
-        p = subprocess.Popen('python main/tools/determine_classifier_accuracy.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        p.wait()
-        res = p.communicate()
-        if p.returncode:
+        try:
+            subprocess.check_call('python main/tools/determine_classifier_accuracy.py')
+        except subprocess.CalledProcessError:
             result = "Error Occured! Check your IP address!"
         
         #Read the result text file and append it into mylist
