@@ -97,7 +97,15 @@ def upload(request):
         os.putenv('ipadd',ip)
         subprocess.run('bash main/tools/populate_objectsdb.sh', shell=True)
         subprocess.run('bash main/tools/train_classifiers.sh', shell=True)
-        subprocess.run('python main/tools/determine_classifier_accuracy.py')
+        #subprocess.run('python main/tools/determine_classifier_accuracy.py')
+        
+        result=""
+
+        p = subprocess.Popen('python main/tools/determine_classifier_accuracy.py', shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p.wait()
+        res = p.communicate()
+        if p.returncode:
+            result = "Error Occured! Check your IP address!"
         
         #Read the result text file and append it into mylist
         with open('result.txt', 'r') as out:
@@ -118,4 +126,4 @@ def upload(request):
         for f in filelist:
             os.remove(f)
     # return render(request, 'result.html',{})   
-    return render(request, 'tools.html',{'data1':mylist[0],'data2':total_files})
+    return render(request, 'tools.html',{'data1':mylist[0],'data2':total_files,'data3':result})
