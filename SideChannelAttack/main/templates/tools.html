@@ -61,6 +61,10 @@
       <br />
       <p>Side Channel Attack Detection Rate : {{data1}}%</p>
       <p>Total Number of Files Processed : {{data2}}</p>
+        {%if data3%}
+          <br>
+          <p style="font-weight: bold; color:red">{{data3}}</p>
+        {%endif%}
       <br />
       <a href="{% static 'result-view.txt' %}" download>Click to download full result</a>
       {%endif%}
