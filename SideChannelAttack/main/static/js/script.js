@@ -1,13 +1,14 @@
-var i = 0;
+var j = 0;
 
 function duplicate() {
-    if(i < 9){
+    if(j < 9){
         document.getElementById('addform').onclick = duplicate;
-        var original = document.getElementById('uploadfile0');
+        var original = document.getElementById('uploadfile');
         var clone = original.cloneNode();
-        i += 1;
-        clone.setAttribute('name','uploadfile' + i);
-        clone.setAttribute('id','uploadfile' + i);
+        j += 1;
+        clone.removeAttribute('hidden');
+        clone.setAttribute('name','uploadfile' + j);
+        clone.setAttribute('id','uploadfile' + j);
         document.getElementById("uploadfile0").parentNode.appendChild(clone);
     }
 }
