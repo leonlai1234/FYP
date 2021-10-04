@@ -32,8 +32,8 @@
 
       <form action="upload" method="post" enctype="multipart/form-data" onSubmit="loadingFunction()">
         <div id="uploadfilediv">
-          <input type="file" hidden onchange="checkFiles(this.files,this.id)" class="upload-box" name="uploadfile" id="uploadfile" multiple />
-          <input type="file" onchange="checkFiles(this.files,this.id)" class="upload-box" name="uploadfile0" id="uploadfile0" multiple />
+          <input type="file" hidden onchange="return filevalidation(this.files,this.id)" class="upload-box" name="uploadfile" id="uploadfile" multiple required/>
+          <input type="file" onchange="return filevalidation(this.files,this.id)" class="upload-box" name="uploadfile0" id="uploadfile0" multiple required/>
         </div>
         <br /><br />
         <p class="ip-word">

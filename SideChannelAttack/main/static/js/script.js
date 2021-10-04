@@ -1,4 +1,5 @@
 var j = 0;
+var k = 0;
 
 function duplicate() {
     if(j < 9){
@@ -7,13 +8,26 @@ function duplicate() {
         var clone = original.cloneNode();
         j += 1;
         clone.removeAttribute('hidden');
+        original.removeAttribute('required');
         clone.setAttribute('name','uploadfile' + j);
         clone.setAttribute('id','uploadfile' + j);
         document.getElementById("uploadfile0").parentNode.appendChild(clone);
     }
 }
 
-function checkFiles(files,id){
+function filevalidation(files,id){
+    var fileInput = document.getElementById(id);      
+    var filePath = fileInput.value;
+
+    // Allowing file type
+    var allowedExtensions = /(\.pcap)$/i;
+        
+    if (!allowedExtensions.exec(filePath)) {
+        alert('Invalid file type. Please choose PCAP files only.');
+        fileInput.value = '';
+        return false;
+    }
+    
     if(files.length>10){
         alert("10 pcap files per entries.");
 
@@ -23,7 +37,14 @@ function checkFiles(files,id){
             list.items.add(files[i]) 
         }
         document.getElementById(id).files = list.files
-    }else if(files.length < 10){
+        return false;
+    } 
+    
+    if(files.length < 10){
         alert("10 pcap files per entries.");
+        fileInput = document.getElementById(id);
+        filePath = fileInput.value;
+        fileInput.value = '';
+        return false;
     }
 }
