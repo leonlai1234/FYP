@@ -8,7 +8,7 @@ function duplicate() {
         var clone = original.cloneNode();
         j += 1;
         clone.removeAttribute('hidden');
-        original.removeAttribute('required');
+        clone.setAttribute('required','required');
         clone.setAttribute('name','uploadfile' + j);
         clone.setAttribute('id','uploadfile' + j);
         document.getElementById("uploadfile0").parentNode.appendChild(clone);
