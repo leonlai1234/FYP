@@ -48,3 +48,11 @@ function filevalidation(files,id){
         return false;
     }
 }
+
+function remove(){
+    for(j ;j > 0;j--){
+        var obj = document.getElementById("uploadfile" + j);
+        obj.remove();
+    }
+    j = 0;
+}
