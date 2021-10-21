@@ -41,6 +41,11 @@
           <input type="text" name="ipadd" id="ipadd" minlength="7" maxlength="15" size="15"
             pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required="required"/>
         </p>
+        <br />
+        <p class="ip-word">
+          Term :
+          <input type="text" name="search-term" id="search-term" size="15" required="required"/>
+        </p>
         <br /><br />
         <div class="one-line">
           <input class="button-test" type="reset" name="reset" value="Reset" onclick="remove()"/>
@@ -67,7 +72,7 @@
           <p style="font-weight: bold; color:red">{{data3}}</p>
         {%endif%}
       <br />
-      <a href="{% static 'result-view.txt' %}" download>Click to download full result</a>
+      <a href="{% static data4 %}" download>Click to download full result</a>
       {%endif%}
     </div>
   </div>

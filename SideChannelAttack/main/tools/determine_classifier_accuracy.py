@@ -190,15 +190,16 @@ avg_ndr = round(avg_ndr,2)
 
 total_file = os.environ['Total_Files']
 ipadd = os.environ['ipadd']
+search = os.environ['Search_Term']
 x = datetime.datetime.now()
 x = x.strftime("%d/%m/%Y %H:%M:%S")
 
-with open("result.txt", "w") as f:
+with open(search + ".txt", "w") as f:
     f.write(str(avg_tpr) + "\n")
     f.write(str(avg_fpr) + "\n")
     f.write(str(avg_ndr) + "\n")
     
-with open("main/static/result-view.txt", "w") as fs:
+with open("main/static/" + search + ".txt", "w") as fs:
     fs.write("Side Channel Attack Detection Tools\n")
     fs.write("----------------------------------------------------------\n")
     fs.write("Date and Time : " + str(x) + "\n")

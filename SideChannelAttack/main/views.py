@@ -31,6 +31,10 @@ def upload(request):
     if request.method == 'POST':
         #Get form ip address value
         ip = str(request.POST.get('ipadd'))
+        
+        #Get specific search term
+        termm = str(request.POST.get('search-term'))
+        
         #Initialize counter
         i = 0
         x = 0
@@ -61,12 +65,12 @@ def upload(request):
         dt = dt.strftime("%d/%m/%Y %H:%M:%S")
         
         #In case Wrong IP input, it will show 0% as result
-        with open("result.txt", "w") as f:
+        with open(termm + ".txt", "w") as f:
             f.write("0\n")
             f.write("0\n")
             f.write("0")
     
-        with open("main/static/result-view.txt", "w") as fs:
+        with open("main/static/" + termm + ".txt", "w") as fs:
             fs.write("Side Channel Attack Detection Tools\n")
             fs.write("----------------------------------------------------------\n")
             fs.write("Date and Time : " + str(dt) + "\n")
@@ -91,6 +95,7 @@ def upload(request):
 
         #Putting list into user's environment
         os.environ['Total_Files'] = str(total_files)
+        os.environ['Search_Term'] = str(termm)
         os.putenv('totalupload',str(x))
         os.putenv('trainfilename_list',' '.join(trainfilename_list))
         os.putenv('testfilename_list',' '.join(testfilename_list))
@@ -100,6 +105,7 @@ def upload(request):
         #subprocess.run('python main/tools/determine_classifier_accuracy.py')
         
         result=""
+        send_term = str(termm) + ".txt"
 
         try:
             subprocess.check_call('python main/tools/determine_classifier_accuracy.py')
@@ -107,7 +113,7 @@ def upload(request):
             result = "Error Occured! Check your IP address!"
         
         #Read the result text file and append it into mylist
-        with open('result.txt', 'r') as out:
+        with open(termm + '.txt', 'r') as out:
             line = out.readlines()
             mylist = []
             for i in line:
@@ -125,4 +131,4 @@ def upload(request):
         for f in filelist:
             os.remove(f)
     # return render(request, 'result.html',{})   
-    return render(request, 'tools.html',{'data1':mylist[0],'data2':total_files,'data3':result})
+    return render(request, 'tools.html',{'data1':mylist[0],'data2':total_files,'data3':result,'data4':send_term})
